@@ -1,7 +1,7 @@
-void setup(){
-
+void setup() {
+    fullScreen();
 }
 
-void draw(){
-    
+void draw() {
+    gerenciamento_instalacao();   
 }
