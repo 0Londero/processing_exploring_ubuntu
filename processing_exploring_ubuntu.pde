@@ -6,10 +6,10 @@ PImage GNU;
 int tela = 0;
 //0 = menu
 //1 = GNU
-//2 = criação
-//3 = Debian 1993
-//4 = Ubuntu 2004
-//5 = Ubuntu moderno
+//2 = Criação do Linux
+//3 = Linux começa a ser utilizado
+//4 = Criação do Ubuntu 
+//5 = Consolidação mundial do Linux
 
 void setup(){
   fullScreen();
