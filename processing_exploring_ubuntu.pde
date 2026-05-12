@@ -37,6 +37,10 @@ void draw(){
     data5();
     GNU();
     setaLinha();
+    criacaoLinux();
+    utilLinux();
+    criacaoUbuntu();
+    consoLinux();
 }
 
   if(tela==1){
@@ -44,9 +48,50 @@ void draw(){
    retanguloMenu();
    textoMenuGnu();
     
+   
+     }
+  if (tela==2){ 
+    retanguloMenu();
+    textoMenuCrLinux();
+  
+    
+     
+     
+     
+  }
+  
+  
+  if(tela==3){
+    retanguloMenu();
+    textoMenuUtiLinux();
     
     
     
+    
+    
+  }
+  
+  
+  if(tela==4){
+    retanguloMenu();
+    textoCrUbuntu();
+  
+  
+  
+  
+  }
+  
+  
+  if(tela==5){
+    retanguloMenu();
+    textoConsoLinux();
+
+
+
+
+
+
+
   }
 }
 
@@ -107,13 +152,68 @@ void data5(){
 }
 
 void GNU(){
-  fill(0);
+  fill(233,84,32);
   rect(width*0.01,height*0.38,width*0.16,height*0.12,25);
-  fill(255);
+  fill(0);
   textAlign(CENTER, CENTER);
   textFont(ubuntu);
   text("GNU", width*0.01 + width*0.16/2, height*0.38 + height*0.12/2);
 }
+
+void criacaoLinux(){
+  fill(233,84,32);
+  rect(width*0.18,height*0.58,width*0.18,height*0.12,25);
+  fill(0);
+  textAlign(CENTER, CENTER);
+  textFont(ubuntu);
+  text("Criação do Linux", width*0.18 + width*0.18/2, height*0.58 + height*0.12/2);
+  
+}
+
+void utilLinux(){
+  fill(233,84,32);
+  rect(width*0.37,height*0.38,width*0.16,height*0.12,25);
+  fill(0);
+  textAlign(CENTER, BOTTOM);
+  textFont(ubuntu);
+  text("Linux começa", width*0.37+ width*0.16/2, height*0.38 + height*0.12/2);
+  fill(0);
+  textAlign(CENTER, TOP);
+  textFont(ubuntu);
+  text("a ser utilizado", width*0.37 + width*0.16/2, height*0.39 + height*0.12/2);
+  
+}
+  
+void criacaoUbuntu(){
+  fill(233,84,32);
+  rect(width*0.54,height*0.58,width*0.18,height*0.12,25);
+  fill(0);
+  textAlign(CENTER, BOTTOM);
+  textFont(ubuntu);
+  text("Criação do", width*0.54 + width*0.18/2, height*0.58 + height*0.12/2);
+  fill(0);
+  textAlign(CENTER, TOP);
+  textFont(ubuntu);
+  text("Ubuntu", width*0.54 + width*0.18/2, height*0.58 + height*0.12/2);
+  
+}
+
+void consoLinux(){
+  fill(233,84,32);
+  rect(width*0.73,height*0.38,width*0.16,height*0.12,25);
+  fill(0);
+  textAlign(CENTER, BOTTOM);
+  textFont(ubuntu);
+  text("Consolidação",width*0.73+ width*0.16/2, height*0.38 + height*0.12/2);
+  fill(0);
+  textAlign(CENTER, TOP);
+  textFont(ubuntu);
+  text("geral do linux", width*0.73 + width*0.16/2, height*0.39 + height*0.12/2);
+  
+}
+
+
+
 
 void setaLinha(){
   fill(255);
@@ -127,9 +227,21 @@ void setaLinha(){
 void mousePressed(){
   if(mouseX > width *0.01 && mouseX< width*0.01 + width * 0.16 && mouseY> height*0.38 && mouseY<height*0.38 + height*0.12){
     tela = 1; 
-    
+  }
+  if(mouseX > width *0.18 && mouseX< width*0.18 + width * 0.18 && mouseY> height*0.58 && mouseY<height*0.58 + height*0.12){
+    tela = 2;
+  }
+  if(mouseX> width*0.37 && mouseX< width*0.37 + width* 0.16 && mouseY> height*0.38 && mouseY<height*0.38 + height*0.12){
+    tela = 3;
+  }
+  if(mouseX> width*0.54 && mouseX< width*0.54 + width* 0.58 && mouseY> height*0.58 && mouseY<height*0.58 + height*0.12){
+    tela = 4;
+  }
+  if(mouseX> width*0.73 && mouseX< width*0.73 + width* 0.16 && mouseY> height*0.39 && mouseY<height*0.39 + height*0.12){
+    tela = 5;
   }
 }
+
 
 
 //Projeto GNU (tela=1)
@@ -147,3 +259,68 @@ void textoMenuGnu(){
   textFont(ubuntuBold);
   text("Projeto GNU",width/2,height*0.11);
 }
+
+
+
+
+
+
+
+//Criação Linux (tela=2)
+
+void textoMenuCrLinux(){
+  fill(#e95420);
+  textAlign(CENTER);
+  textFont(ubuntuBold);
+  text("Criação do Linux",width/2,height*0.11);
+}
+
+
+
+
+
+
+
+
+//Utilização do Linux(tela=3)
+
+void textoMenuUtiLinux(){
+  fill(#e95420);
+  textAlign(CENTER);
+  textFont(ubuntuBold);
+  text("Linux começa a ser utilizado",width/2,height*0.11);
+}
+ 
+  
+  
+  
+  
+  
+  
+  
+//Criação do Ubuntu(tela=4)
+void textoCrUbuntu(){
+  fill(#e95420);
+  textAlign(CENTER);
+  textFont(ubuntuBold);
+  text("Criação do Ubuntu",width/2,height*0.11);
+}
+
+
+
+
+
+
+
+
+
+
+
+//Consolidação mundial do Linux (tela=5)
+void textoConsoLinux(){
+  fill(#e95420);
+  textAlign(CENTER);
+  textFont(ubuntuBold);
+  text("Consolidação mundial do Linux",width/2,height*0.11);
+}
+  
