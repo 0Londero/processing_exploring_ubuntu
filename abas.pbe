@@ -1,0 +1,93 @@
+int paginacao = 0;
+float separacao = width / 9;
+
+void setup(){
+  fullScreen();
+  background(123,123,123);
+  noStroke();
+  rect(1, 5, width/8, height/30, 10, 10, 0, 0);
+  rect(1 + (width/7.8 * 1), 5, width/8, height/30, 10, 10, 0, 0);
+  rect(1 + (width/7.8 * 2), 5, width/8, height/30, 10, 10, 0, 0);
+  rect(1 + (width/7.8 * 3), 5, width/8, height/30, 10, 10, 0, 0);
+  rect(1 + (width/7.8 * 4), 5, width/8, height/30, 10, 10, 0, 0);
+  rect(1 + (width/7.8 * 5), 5, width/8, height/30, 10, 10, 0, 0);
+}
+
+void draw(){
+  println(width / 9);
+  if(paginacao == 1){
+    background(255,0,0);
+    rect(1, 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 1), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 2), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 3), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 4), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 5), 5, width/8, height/30, 10, 10, 0, 0);
+  }
+  else if(paginacao == 2){
+    background(0,255,0);
+    rect(1, 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 1), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 2), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 3), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 4), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 5), 5, width/8, height/30, 10, 10, 0, 0);
+  }
+  else if(paginacao == 3){
+    background(0,255,255);
+    rect(1, 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 1), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 2), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 3), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 4), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 5), 5, width/8, height/30, 10, 10, 0, 0);
+  }
+  else if(paginacao == 4){
+    background(255,255,0);
+    rect(1, 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 1), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 2), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 3), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 4), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 5), 5, width/8, height/30, 10, 10, 0, 0);
+  }
+  else if(paginacao == 5){
+    background(255,0,255);
+    rect(1, 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 1), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 2), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 3), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 4), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 5), 5, width/8, height/30, 10, 10, 0, 0);
+  }
+  else if(paginacao == 6){
+    background(255,255,255);
+    rect(1, 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 1), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 2), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 3), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 4), 5, width/8, height/30, 10, 10, 0, 0);
+    rect(1 + (width/7.8 * 5), 5, width/8, height/30, 10, 10, 0, 0);
+  }
+}
+
+void mousePressed(){
+  if(mouseX >= 1 && mouseX <= width/8 && mouseY >= 5 && mouseY <= height/30){
+    paginacao = 1;
+  }
+  else if(mouseX >= 1 + (width/7.8 * 1) && mouseX <= 1 + (width/7.8 * 1) + (width/8) && mouseY >= 5 && mouseY <= height/30){
+    paginacao = 2;
+  }
+  else if(mouseX >= 1 + (width/7.8 * 2) && mouseX <= (width/7.8 * 2) + (width/8) && mouseY >= 5 && mouseY <= height/30){
+    paginacao = 3;
+  }
+  else if(mouseX >= 1 + (width/7.8 * 3) && mouseX <= (width/7.8 * 3) + (width/8) && mouseY >= 5 && mouseY <= height/30){
+    paginacao = 4;
+  }
+  else if(mouseX >= 1 + (width/7.8 * 4) && mouseX <= (width/7.8 * 4) + (width/8) && mouseY >= 5 && mouseY <= height/30){
+    paginacao = 5;
+  }
+  else if(mouseX >= 1 + (width/7.8 * 5) && mouseX <= (width/7.8 * 5) + (width/8) && mouseY >= 5 && mouseY <= height/30){
+    paginacao = 6;
+  }
+}
