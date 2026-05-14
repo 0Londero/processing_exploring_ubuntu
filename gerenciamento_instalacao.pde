@@ -1,5 +1,6 @@
 PImage fundo;
 PImage pacote_ubuntu;
+PImage pacote_desenho;
 PFont regular;
 PFont bold;
 int tela_atual = 0;
@@ -73,6 +74,7 @@ void menu(){
 void pacotes(){
     fundo = loadImage("images/fundo_guilherme.jpg");
     pacote_ubuntu = loadImage("images/pacote_ubuntu.png");
+    pacote_desenho = loadImage("images/pacote_desenho.png");
     image(fundo,0,0,width, height);
     regular = createFont("images/Ubuntu-Regular.ttf", 40);
     bold = createFont("images/Ubuntu-Bold.ttf", 50);
@@ -93,12 +95,29 @@ void pacotes(){
     textSize(25);
     text("Pacotes são arquivos que armazenam programas e todos os \ncomponentes necessários para seu funcionamento, como bibliotecas e dependências.\nNo Ubuntu, o gerenciamento desses pacotes é feito pelo APT,\n sistema responsável por instalar, atualizar e remover programas de forma automática e segura.",(width/18.21)+((width/1.4)/2),(height/4.5)+((height/5.12)/2));
     image(pacote_ubuntu, width/1.24, height/4.5, width/6.41, height/5.12);
+
+    //Desenho do pacote
+    image(pacote_desenho, width/18.21, height/2.25, width/4.55, height/2.56);
+
+    //Botão de voltar
+    botao_voltar();
 }
 
 void mousePressed(){
-    if (mouseX >= width/18.21 && mouseX <= width/2.02 && mouseY >= height/3.37 && mouseY <= height/2.03){
+    if (tela_atual == 0 && mouseX >= width/18.21 && mouseX <= width/2.02 && mouseY >= height/3.37 && mouseY <= height/2.03){
         tela_atual = 1;
+    }
+    if(tela_atual == 1 && mouseX >= width/18.21 && mouseX <= (width/18.21)*2 && mouseY >= height/1.16 && mouseY <= (height/1.16)+(height/10.24)){
+        tela_atual = 0;
     }
 }
 
+void botao_voltar(){
+    botoes(width/18.21, height/1.16, width/18.21, height/10.24, height/19.2);
+    stroke(233,84,32);
+    strokeWeight(10);
+    line((width/18.21)+(width/91), (height/1.16)+(height/10.24/2), (width/18.21)+(width/39), (height/1.16)+(height/51.2));
+    line((width/18.21)+(width/91), (height/1.16)+(height/10.24/2), (width/18.21)+(width/39), (height/1.16)+(height/12.8));
+    line((width/18.21)+(width/91), (height/1.16)+(height/10.24/2), (width/18.21)+(width/22.75), (height/1.16)+(height/10.24/2));
+}
 //final da tela = width/1.04
