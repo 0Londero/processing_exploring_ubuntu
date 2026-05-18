@@ -1,3 +1,5 @@
+import processing.video.*;
+
 void setup() {
     fullScreen();
     smooth(10);
