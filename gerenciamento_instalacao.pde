@@ -111,7 +111,8 @@ void instalacao(){
     image(instalacaoimg, width/19, height/2.7, width/1.8, height/1.8);
 
     //Video terminal
-    botoes(width/1.6, height/2.4, width/2.95, height/2.5, height/38.4);
+    botoes(width/1.62, height/2.4, width/2.97, height/2.5, height/38.4);
+    image(firefox, width/1.62, height/2.3, width/3, height/2.5);
 
     if (mostrar_video){
         image(terminal, width/4, height/4, width/2, height/2);
