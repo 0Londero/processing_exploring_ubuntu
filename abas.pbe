@@ -90,4 +90,4 @@ void mousePressed(){
   else if(mouseX >= 1 + (width/7.8 * 5) && mouseX <= (width/7.8 * 5) + (width/8) && mouseY >= 5 && mouseY <= height/30){
     paginacao = 6;
   }
-}
+} ifjqfjfe
