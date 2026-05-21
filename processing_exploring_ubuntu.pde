@@ -27,7 +27,7 @@ void setup_gi(){
     vantagem3 = loadImage("images/vantagem3.png");
     vantagem4 = loadImage("images/vantagem4.png");
     regular = createFont("images/Ubuntu-Regular.ttf", 40);
-    bold = createFont("images/Ubuntu-Bold.ttf", 50);
+    bold = createFont("images/Ubuntu-Bold.ttf", height/17);
     terminal = new Movie(this, "terminal.mp4");
 }
 

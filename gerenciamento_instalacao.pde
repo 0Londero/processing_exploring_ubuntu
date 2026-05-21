@@ -73,7 +73,7 @@ void pacotes(){
     botoes(width/18.21, height/4.5, width/1.4, height/5.12, height/38.4);
     fill(#2C001E);
     textFont(regular);
-    textSize(20);
+    textSize(height/35);
     text("Pacotes são arquivos que armazenam programas e todos os \ncomponentes necessários para seu funcionamento, como bibliotecas e dependências.\nNo Ubuntu, o gerenciamento desses pacotes é feito pelo APT,\n sistema responsável por instalar, atualizar e remover programas de forma automática e segura.",(width/18.21)+((width/1.4)/2),(height/4.5)+((height/5.12)/2));
     image(pacote_ubuntu, width/1.24, height/4.5, width/9  , height/5.12);
 
@@ -84,7 +84,7 @@ void pacotes(){
     botoes(width/3.54, height/2.25, width/2.57, height/1.89, height/38.4);
     fill(#2C001E);
     textFont(regular);
-    textSize(18);
+    textSize(height/35);
     text("Programa:\nAplicação principal que o usuário deseja \ninstalar e utilizar.\nBiblioteca:\nConjunto de funções e recursos usados\n por programas para executar tarefas específicas.\nDependências:\nArquivos e componentes necessários para\n que o programa funcione corretamente.\nArquivos:\nDocumentos internos do software responsáveis\n pelo funcionamento da aplicação.\nConfigurações:\nInformações que definem preferências\n e comportamento do programa no sistema.",(width/3.54)+(width/2.57/2), (height/2.25)+(height/1.89/2));
 
     //Fluxograma
@@ -109,7 +109,7 @@ void instalacao(){
     botoes(width/18.21, height/4.5, width/1.11, height/5.5, height/38.4);
     fill(#2C001E);
     textFont(regular);
-    textSize(25);
+    textSize(height/35);
     text("Quando o usuário solicita a instalação de um programa, o Ubuntu verifica \nos arquivos necessários, realiza o download e configura automaticamente o software no sistema.\n Esse processo reduz erros de instalação e facilita o uso do computador.",(width/18.21)+((width/1.11)/2),(height/4.5)+((height/5.5)/2));
 
     //Fluxo Instalação
@@ -146,7 +146,7 @@ void comandos(){
     botoes(width/18.21, height/4.5, width/1.11, height/5.5, height/38.4);
     fill(#2C001E);
     textFont(regular);
-    textSize(25);
+    textSize(height/35);
     text("O terminal permite controlar o sistema através de comandos de texto.\nCom poucos comandos, é possível instalar programas, atualizar o sistema e remover softwares rapidamente.",(width/18.21)+((width/1.11)/2),(height/4.5)+((height/5.5)/2));
 
     //Imagem comandos
@@ -156,7 +156,7 @@ void comandos(){
     botoes(width/2, height/2.4, width/2.2, height/2.3, height/38.4);
     fill(#2C001E);
     textFont(regular);
-    textSize(22);
+    textSize(height/35);
     text("Update: Atualiza a lista de programas disponíveis nos \nrepositórios do Ubuntu.\nUpgrade: Instala versões mais recentes \ndos programas já presentes no sistema.\nInstall: Instala um programa automaticamente junto\n com suas dependências.\nRemove: Remove um programa instalado\n do sistema.\nApt search: Pesquisa programas disponíveis nos\n repositórios do Ubuntu.", (width/2)+((width/2.2)/2), (height/2.4)+((height/2.3)/2));
 
     botao_voltar();
@@ -176,7 +176,7 @@ void vantagens(){
     botoes(width/18.21, height/4.5, width/1.11, height/5.5, height/38.4);
     fill(#2C001E);
     textFont(regular);
-    textSize(25);
+    textSize(height/35);
     text("O Ubuntu oferece um sistema organizado e eficiente para gerenciamento de softwares.\nIsso melhora a estabilidade do sistema, facilita atualizações\n e torna o uso mais prático para o usuário.",(width/18.21)+((width/1.11)/2),(height/4.5)+((height/5.5)/2));
 
     //Cards
