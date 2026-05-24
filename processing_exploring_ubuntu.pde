@@ -7,6 +7,7 @@ PImage terminalDerbian;
 PImage ImglogoUbuntu;
 PImage ImgubuntuNav;
 PImage slackwarelogo;
+PImage servidor;
 
 
 int tela = 0;
@@ -17,17 +18,21 @@ int tela = 0;
 //4 = Criação do Ubuntu
 //5 = Consolidação mundial do Linux
 
-void setup() {
-  fullScreen();
-  fundo = loadImage("FundoUbuntu.jpg");
+void setupD () {
   ubuntu = createFont("Ubuntu-Regular.ttf", 32);
   ubuntuBold = createFont("Ubuntu-Bold.ttf", 40);
   ImgGNU = loadImage("GNU.png");
   pinguimLinux = loadImage("pinguim_linux.png");
   slackwarelogo = loadImage("Slackware-Logo.png");
   ImglogoUbuntu = loadImage("logoUbuntu.png");
-  ImgubuntuNav = loadImage("UbuntuNav.jpg");
+  servidor = loadImage("servidor.jpg");
 }
+
+void setup(){
+  fullScreen();
+  setupD();
+}
+
 
 void draw() {
   drawD();

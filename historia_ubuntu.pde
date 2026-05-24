@@ -240,9 +240,7 @@ void textoMenuGnu() {
 void textoGnu() {
   fill(#2C001E);
   textFont(ubuntu);
-  text("GNU é um sistema operacional que é software livre  "
-  +"O sistema operacional GNU consiste em pacotes GNU "
-  +"bem como software livre lançado por terceiros. O desenvolvimento do GNU tornou possível o uso de um computador sem um software que ameace sua liberdade.",
+  text("O Projeto GNU foi lançado em 1983 por Richard Stallman, é uma iniciativa de colaboração global voltada para a criação de um sistema operacional composto inteiramente por software livre. Seu objetivo fundamental é garantir a autonomia do usuário, assegurando a liberdade de executar, estudar, modificar e redistribuir os programas, o que impede que o software seja usado como ferramenta de controle ou restrição.",
     width*0.4, height*0.25, width*0.5, height*0.63);
 }
 
@@ -304,7 +302,7 @@ void textoMenuUtiLinux() {
 void textoUtiLinux(){
   fill(#2C001E);
   textFont(ubuntu);
-  text("Em 1993, o Linux começou a ganhar popularidade porque oferecia uma alternativa gratuita, "
+  text(" Em 1993, o Linux começou a ganhar popularidade porque oferecia uma alternativa gratuita, "
   +"estável e aberta aos sistemas operacionais proprietários da época. Nesse período surgiram "
   +"as primeiras distribuições mais organizadas, como o Debian e o Slackware, "
   +"que facilitavam a instalação e o uso do sistema. O Linux passou a ser utilizado "
@@ -358,7 +356,7 @@ void logoUbuntu(){
 void textoUbuntu(){
   fill(#2C001E);
   textFont(ubuntu);
-  text("O Ubuntu foi criado em 2004 pela empresa Canonical, liderada por Mark Shuttleworth. O objetivo do projeto era tornar "
+  text(" O Ubuntu foi criado em 2004 pela empresa Canonical, liderada por Mark Shuttleworth. O objetivo do projeto era tornar "
   +"o Linux mais simples, acessível e fácil de usar para pessoas comuns, oferecendo uma interface amigável e atualizações frequentes. "
   +"Baseado no Debian, o Ubuntu rapidamente se tornou uma das distribuições Linux mais populares do mundo por combinar estabilidade, " 
   +"facilidadede instalação e software livre.",
@@ -376,14 +374,14 @@ void textoConsoLinux() {
 }
 
 void ubuntuNav(){
-  image(ImgubuntuNav,width*0.08, height*0.25, width*0.3, height*0.5);
+  image(servidor,width*0.08, height*0.25, width*0.3, height*0.5);
 }
 
 void textoLinux(){
     fill(#2C001E);
     textFont(ubuntu);
-    text("Por volta de 2010, o Linux se popularizou entre usuários comuns graças a distribuições mais acessíveis, "
-    +"como o Ubuntu, tornando o sistema mais fácil de instalar e usar; ele passou a ser adotado por ser gratuito, "
+    text(" Por volta de 2010, o Linux se popularizou entre usuários comuns graças a distribuições mais acessíveis, "
+    +"como o Ubuntu, tornando o sistema mais fácil de instalar e usar. Ele passou a ser adotado por ser gratuito, "
     +"leve, seguro e altamente personalizável, já sendo forte em servidores e expandindo seu uso também para computadores "
     +"pessoais, onde continua sendo utilizado até hoje em servidores, sistemas embarcados e por usuários que buscam mais controle do sistema.",
     width*0.4, height*0.25, width*0.5, height*0.63);
