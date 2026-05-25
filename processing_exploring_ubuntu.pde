@@ -80,7 +80,6 @@ void draw() {
   drawConteudo();
 
   // Ícone e menu DEPOIS do conteúdo, para nunca serem cobertos por background()
-  image(icone, width / 91.06, width / 273.2, width / 42.7, width / 42.7);
   drawMenu();
 }
 
@@ -119,6 +118,12 @@ void drawComandosBasicos() {
 //  DRAW MENU — abas superiores
 // ----------------------------------------------------------
 void drawMenu() {
+  fill(#111111);
+  noStroke();
+  rect(0, 0, width, width / 36.92);
+
+  image(icone, width / 91.06, width / 273.2, width / 42.7, width / 42.7);
+
   eraseButton();
   paintSelectedButton();
   drawHoverButton();

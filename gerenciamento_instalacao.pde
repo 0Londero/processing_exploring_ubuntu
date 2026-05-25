@@ -211,7 +211,7 @@ void pacotes() {
   botoes(width / 18.21, height / 4.5, width / 1.4, height / 5.12, height / 38.4);
   fill(#2C001E);
   textFont(regular);
-  textSize(height / 35);
+  textSize(height / 40);
   text(
     "Pacotes são arquivos que armazenam programas e todos os \n" +
     "componentes necessários para seu funcionamento, como bibliotecas e dependências.\n" +

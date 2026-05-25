@@ -1,12 +1,3 @@
-// ============================================================
-//  MÓDULO: menuInicial.pde
-//  Responsabilidade: primeira aba do app (paginacao == 1).
-//
-//  Funções públicas:
-//    showmenuinicial() — chame em drawConteudo() quando paginacao == 1
-//  ⚠  Lê a variável global 'usuario' declarada em terminal.pde
-// ============================================================
-
 void showmenuinicial() {
   background(#333333);
 
@@ -16,7 +7,6 @@ void showmenuinicial() {
   float cardHeight  = height * 0.65;
   float headerHeight = height * 0.08;
 
-  // ── Título superior ──────────────────────────────────────
   float titleSize = height * 0.05;
   textFont(ubuntuFonte);
   textSize(titleSize);
@@ -35,7 +25,6 @@ void showmenuinicial() {
   fill(#E95420);
   text(nomeUsuario, startX + w1, titleY);
 
-  // ── Conteúdo dos cards ───────────────────────────────────
   String titulo1 = "O que é Ubuntu?";
   String corpo1  = "É um dos sistemas operacionais mais populares do mundo, baseado em Linux. "
                  + "Desenvolvido para ser gratuito, seguro e extremamente fácil de usar, ele é "
@@ -56,34 +45,26 @@ void showmenuinicial() {
                  + "• Espírito Coletivo: O sistema é moldado pela colaboração global.\n"
                  + "• Software Livre: Compartilhamento e evolução constante de código.";
 
-  // ── Desenha os três cards ────────────────────────────────
   desenharCard(marginX,                  marginY, cardWidth, cardHeight, headerHeight, titulo1, corpo1);
   desenharCard(marginX * 2 + cardWidth,  marginY, cardWidth, cardHeight, headerHeight, titulo2, corpo2);
   desenharCard(marginX * 3 + cardWidth * 2, marginY, cardWidth, cardHeight, headerHeight, titulo3, corpo3);
 }
 
-// ----------------------------------------------------------
-//  Função auxiliar — desenha um card com cabeçalho e corpo
-// ----------------------------------------------------------
 void desenharCard(float x, float y, float w, float h, float headerH,
                   String titulo, String corpo) {
   noStroke();
 
-  // Cabeçalho roxo
   fill(#5E2750);
   rect(x, y, w, headerH, 15, 15, 0, 0);
 
-  // Corpo cinza
   fill(#AEA79F);
   rect(x, y + headerH, w, h - headerH, 0, 0, 15, 15);
 
-  // Título centralizado no cabeçalho
   fill(#FFFFFF);
   textAlign(CENTER, CENTER);
   textSize(w * 0.055);
   text(titulo, x + w / 2, y + headerH / 2 - (w * 0.01));
 
-  // Corpo do card
   fill(#2C001E);
   textAlign(LEFT, TOP);
   textSize(w * 0.045);
