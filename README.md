@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="images/pucpr.png" width="200px" alt="Logo da Universidade">
+  <img src="data/images/pucpr.png" width="200px" alt="Logo da Universidade">
 </div>
 
 # Explorando o Linux Ubuntu

@@ -1,68 +1,72 @@
-//  Variáveis Globais
-PImage terminal;
-PFont  ubuntumono;
+// ============================================================
+//  MÓDULO: terminal.pde
+//  Responsabilidade: tela de login estilo terminal Ubuntu.
+//
+//  Variáveis exportadas para outros módulos:
+//    int    estado   — estado do login (0=user, 1=senha, 2=logado, 3=avançar)
+//    String usuario  — nome digitado pelo usuário
+//
+//  Funções públicas:
+//    configterminal() — chame uma vez em setup()
+//    showterminal()   — chame em draw() quando telaAtual == 0
+//  ⚠  keyPressed()   — captura global; só age quando telaAtual == 0
+// ============================================================
 
-// Estados do terminal:
-//   0 → digitando usuário
-//   1 → digitando senha
-//   2 → login concluído (mostra tela completa antes de avançar)
-int    estado  = 0;
+// ------ Variáveis de estado do terminal ------
+// 'usuario' e 'estado' são lidos por menuInicial.pde e pelo arquivo principal
+int    estado  = 0;   // 0=digitando user | 1=digitando senha | 2=logado | 3=avançar
 String usuario = "";
 String senha   = "";
 String buffer  = "";
 
-// Cores 
-final color COR_USER_HOST = color(78, 154, 6);
+// ------ Recursos do terminal (privados a este módulo) ------
+PImage terminalBG;    // renomeado para evitar conflito com a var 'terminal' em outros escopos
+PFont  ubuntumono;
+
+// ------ Paleta de cores ------
+final color COR_USER_HOST = color(78, 154,   6);
 final color COR_BRANCO    = color(255, 255, 255);
 final color COR_CINZA     = color(170, 170, 170);
 
-//  Carrega recursos uma única vez (sem lag)
+// ----------------------------------------------------------
+//  configterminal() — carrega recursos; chamar no setup()
+// ----------------------------------------------------------
 void configterminal() {
-  terminal   = loadImage("images/terminal.png");
+  terminalBG = loadImage("images/terminal.png");
   ubuntumono = createFont("fonts/UbuntuMono-R.ttf", 32);
 }
 
-//  Renderização principal do terminal
+// ----------------------------------------------------------
+//  showterminal() — renderiza a tela; chamar no draw()
+// ----------------------------------------------------------
 void showterminal() {
-  image(terminal, 0, 0, width, height);
+  image(terminalBG, 0, 0, width, height);
   textFont(ubuntumono);
-  textSize(32);           // garante tamanho consistente antes de medir larguras
+  textSize(32);
 
-  // Cursor piscante: troca a cada 30 frames (~0,5 s a 60 fps)
+  // Cursor piscante: alterna a cada 30 frames (~0,5 s a 60 fps)
   String cursor = ((frameCount / 30) % 2 == 0) ? "_" : " ";
 
-  // ESTADO 0: digitando usuário
   if (estado == 0) {
+    // ── Digitando usuário
     fill(COR_BRANCO);
-    text("login: " + buffer + cursor, width * 0.2540, height * 0.178);
+    text("login: " + buffer + cursor, width * 0.254, height * 0.178);
 
-  // ESTADO 1: digitando senha
   } else if (estado == 1) {
+    // ── Digitando senha
     fill(COR_BRANCO);
-    text("login: " + usuario, width * 0.2540, height * 0.178);
-
-    // "Password:" sem exibir nenhum caractere digitado
-    fill(COR_BRANCO);
+    text("login: " + usuario, width * 0.254, height * 0.178);
     text("Password: " + cursor, width * 0.040, height * 0.216);
 
-  // ESTADO 2: logado 
   } else if (estado >= 2) {
-    // Linha de login já preenchida
+    // ── Logado: exibe tela completa de boas-vindas
     fill(COR_BRANCO);
-    text("login: " + usuario, width * 0.2540, height * 0.178);
-
-    // Linha de senha — mostra só o prompt, sem revelar o que foi digitado
-    fill(COR_BRANCO);
-    text("Password: ", width * 0.040, height * 0.216);
-
-    // Mensagem de boas-vindas
-    fill(COR_BRANCO);
+    text("login: " + usuario, width * 0.254, height * 0.178);
+    text("Password: ",         width * 0.040, height * 0.216);
     text("Welcome to Ubuntu 22.04.4 LTS", width * 0.039, height * 0.248);
 
     fill(COR_CINZA);
     text(" * Documentation:  https://help.ubuntu.com", width * 0.0382, height * 0.28);
-
-    fill(COR_CINZA);
     text("Last login: " + day() + "/" + month() + " on tty1", width * 0.0382, height * 0.3125);
 
     float promptX = width * 0.040;
@@ -72,19 +76,25 @@ void showterminal() {
     text(usuario + "@computer", promptX, promptY);
 
     fill(COR_BRANCO);
-    // Avança X pela largura exata do texto já desenhado
     float offsetX = textWidth(usuario + "@computer");
     text(":~$ " + cursor, promptX + offsetX, promptY);
   }
 }
 
-//  Captura de teclado
+// ----------------------------------------------------------
+//  keyPressed() — captura global de teclado
+//  Age somente quando telaAtual == 0 (terminal ativo).
+//  Não interfere com outros módulos.
+// ----------------------------------------------------------
 void keyPressed() {
 
-  // Estado 0: captura do usuário
+  // Ignora completamente quando o terminal não está na tela
+  if (telaAtual != 0) return;
+
   if (estado == 0) {
+    // Estado 0: capturando nome de usuário
     if (key == ENTER || key == RETURN) {
-      if (buffer.length() > 0) {        // impede usuário vazio
+      if (buffer.length() > 0) {
         usuario = buffer.trim();
         buffer  = "";
         estado  = 1;
@@ -96,26 +106,25 @@ void keyPressed() {
       buffer += key;
     }
 
-  // ── Estado 1: captura da senha (invisível)
   } else if (estado == 1) {
+    // Estado 1: capturando senha (invisível)
     if (key == ENTER || key == RETURN) {
-      senha  = buffer;   // armazena, mas nunca exibe
+      senha  = buffer;
       buffer = "";
-      estado = 2;        // login concluído
+      estado = 2;
     } else if (key == BACKSPACE) {
       if (buffer.length() > 0)
         buffer = buffer.substring(0, buffer.length() - 1);
     } else if (key != CODED) {
-      buffer += key;     // acumula mas permanece oculto na tela
+      buffer += key;
     }
 
-  // ── Estado 2: aguarda ENTER para avançar de tela
   } else if (estado == 2) {
+    // Estado 2: aguarda ENTER para avançar para o app
     if (key == ENTER || key == RETURN) {
-      // ► Aqui você troca para a próxima tela do aplicativo.
-      // Exemplo: telaAtual = 1;  (variável definida no arquivo principal)
-      // Por enquanto, avança o estado para sinalizar que deve mudar de tela.
       estado = 3;
+      // ► O arquivo principal detecta estado >= 3 no draw()
+      //   e seta telaAtual = 1 automaticamente.
     }
   }
 }
